@@ -9,8 +9,9 @@ const ax = require("axios");
 (async () => {
   for await (const urlAndResp of urls
                                   .map(async url => {
-                                    return { url: url, resp: await ax.get(url) }
+                                      return { url: url, resp: await ax.get(url) }
                                   }))
-    console.log(urlAndResp.resp.status);
+    //console.log( urlAndResp.resp.status);
+    console.log(`${urlAndResp.url} : ${urlAndResp.resp.status}`);
   }
 )();
